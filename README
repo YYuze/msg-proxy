@@ -13,17 +13,11 @@
         (2) 将得到的jar包部署到项目服务器上
         (3) 将jar包中MsgProcessor的实现类的处理消息类型 【type】、【file:///jar包全路径】 、jar包中的 【MsgProcessor实现类名】插入到表 【jar】 中
         (4) 调用 【/proxy/reload】 api，对新的处理模块进行加载
-    配置页面增加：
-        (1) mvn clean package -pl 【proxy-*】 -am 打包子模块
-        (2) 将得到的jar包上传到项目服务器上
-        (3) 进入/jar_manager.html页面，点击右上角【新增】按钮，根据jar包部署信息，输入相关变量，点击右上角【RELOAD】按钮
-
+ 
 4.新增消息转发路径：
     手动增加：
        (1) 在表 【route】 中插入转发路径规则 【type】【目标url】【转发该请求需要的token】【url接受的HTTP方法】【转发请求需要的头信息（以 %&&% 分隔）】【请求成功时返回的ACK】
        (2) 调用 【/proxy/reload】 api，对新的路径规则进行加载
-    配置页面增加：
-       (1) 进入/route_manager.html页面，点击右上角【新增】按钮，输入相关变量，点击右上角【RELOAD】按钮
 
 5.api：
     (1) /proxy/transmit
