@@ -1,6 +1,6 @@
-1.该项目为HTTP请求代理服务，项目模块为【webhook-agent】，主体服务为【proxy】子模块，公共类为【core】模块，代理的消息处理子模块以 【proxy-*】 命名
+1.该项目为HTTP请求代理服务，项目模块为【msg-proxy】，主体服务为【proxy】子模块，公共类为【core】模块，代理的消息处理子模块以 【proxy-*】 命名
     项目结构为
-    |-- webhook-proxy
+    |-- msg-proxy
         |-- proxy
         |-- core
         |-- proxy-*
