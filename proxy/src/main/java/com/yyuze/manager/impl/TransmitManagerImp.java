@@ -8,6 +8,7 @@ import com.yyuze.mq.MessageQueue;
 import com.yyuze.processor.MsgProcessor;
 import com.yyuze.repository.JarRepository;
 import com.yyuze.repository.RouteRepository;
+import com.yyuze.util.JsonUtil;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -133,8 +134,11 @@ public class TransmitManagerImp implements TransmitManager {
                 throw new Exception("token error: " + token);
             }
             else {
-                json.put("token", token);
                 String type = this.typeMap.get(token);
+                JSONObject pJson = new JSONObject();
+                pJson.put("jar", JsonUtil.toJson(this.jarRepository.getJarByType(type)));
+                pJson.put("route",JsonUtil.toJson(this.routeRepository.getRouteByToken("token")));
+                pJson.put("data",json.get("data").toString());
                 MsgProcessor processor = this.processorMap.get(type);
                 MessageModel message = processor.process(json);
                 this.messageQueue.pushToMQ(message);

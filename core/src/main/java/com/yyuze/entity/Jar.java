@@ -1,9 +1,6 @@
 package com.yyuze.entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,8 +16,7 @@ import javax.persistence.Table;
  * 存放用于处理该type消息的jar包路径和类名
  */
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "Jar")
 public class Jar {
@@ -35,4 +31,27 @@ public class Jar {
     @Column(name = "class_name")
     private String className;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getJarFilePath() {
+        return jarFilePath;
+    }
+
+    public void setJarFilePath(String jarFilePath) {
+        this.jarFilePath = jarFilePath;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
 }

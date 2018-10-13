@@ -1,15 +1,12 @@
 package com.yyuze.model;
 
 import com.yyuze.entity.Route;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Author: yyuze
  * Created: 2018/9/14
  */
-@Getter
-@Setter
+
 public class MessageModel {
 
     private Route route;
@@ -18,5 +15,27 @@ public class MessageModel {
 
     public int transferedCount;
 
+    public Route getRoute() {
+        return route;
+    }
 
+    public void setRoute(Route route) {
+        this.route = route;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public int getTransferedCount() {
+        return transferedCount;
+    }
+
+    public void setTransferedCount(int transferedCount) {
+        this.transferedCount = transferedCount;
+    }
 }
