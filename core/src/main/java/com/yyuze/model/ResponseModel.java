@@ -1,14 +1,10 @@
 package com.yyuze.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * Author: yyuze
  * Created: 2018/9/14
  */
-@Getter
-@Setter
+
 public class ResponseModel {
 
     public static int SUCCESS = 1;
@@ -34,5 +30,45 @@ public class ResponseModel {
                 this.message = "ERROR " + message;
                 break;
         }
+    }
+
+    public static int getSUCCESS() {
+        return SUCCESS;
+    }
+
+    public static void setSUCCESS(int SUCCESS) {
+        ResponseModel.SUCCESS = SUCCESS;
+    }
+
+    public static int getFAILED() {
+        return FAILED;
+    }
+
+    public static void setFAILED(int FAILED) {
+        ResponseModel.FAILED = FAILED;
+    }
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

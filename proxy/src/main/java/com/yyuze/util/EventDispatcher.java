@@ -2,8 +2,6 @@ package com.yyuze.util;
 
 import com.yyuze.entity.Route;
 import com.yyuze.model.MessageModel;
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -18,8 +16,7 @@ import java.io.IOException;
  * Author: yyuze
  * Created: 2018/9/14
  */
-@Getter
-@Setter
+
 public class EventDispatcher extends Thread {
 
     private String result;
@@ -88,5 +85,21 @@ public class EventDispatcher extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public MessageModel getMessage() {
+        return message;
+    }
+
+    public void setMessage(MessageModel message) {
+        this.message = message;
     }
 }

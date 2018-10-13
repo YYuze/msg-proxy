@@ -1,7 +1,5 @@
 package com.yyuze.entity;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -16,8 +14,7 @@ import javax.persistence.*;
  * 每个token对应一条转发路径
  */
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "Route")
 public class Route {
@@ -49,4 +46,60 @@ public class Route {
 
     @Column(name = "request_success_flag")
     private String requestSuccessFlag;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getRequestUrl() {
+        return requestUrl;
+    }
+
+    public void setRequestUrl(String requestUrl) {
+        this.requestUrl = requestUrl;
+    }
+
+    public String getRequestToken() {
+        return requestToken;
+    }
+
+    public void setRequestToken(String requestToken) {
+        this.requestToken = requestToken;
+    }
+
+    public String getRequestMethod() {
+        return requestMethod;
+    }
+
+    public void setRequestMethod(String requestMethod) {
+        this.requestMethod = requestMethod;
+    }
+
+    public String getRequestHeaderStr() {
+        return requestHeaderStr;
+    }
+
+    public void setRequestHeaderStr(String requestHeaderStr) {
+        this.requestHeaderStr = requestHeaderStr;
+    }
+
+    public String getRequestSuccessFlag() {
+        return requestSuccessFlag;
+    }
+
+    public void setRequestSuccessFlag(String requestSuccessFlag) {
+        this.requestSuccessFlag = requestSuccessFlag;
+    }
 }

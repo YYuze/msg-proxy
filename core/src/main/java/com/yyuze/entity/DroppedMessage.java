@@ -1,8 +1,5 @@
 package com.yyuze.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 /**
@@ -10,13 +7,12 @@ import javax.persistence.*;
  * Created: 2018/9/25
  */
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "dropped_message")
 public class DroppedMessage {
 
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
     private long id;
@@ -30,5 +26,35 @@ public class DroppedMessage {
     @Column(name = "create_on")
     private String createOn;
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getRouteToken() {
+        return routeToken;
+    }
+
+    public void setRouteToken(String routeToken) {
+        this.routeToken = routeToken;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getCreateOn() {
+        return createOn;
+    }
+
+    public void setCreateOn(String createOn) {
+        this.createOn = createOn;
+    }
 }
